@@ -1,6 +1,6 @@
 // using axios because fetch doesn't work on some old browsers
 import axios from 'axios';
-import {key,proxy,displayAlert} from '../shared'
+import { key, proxy, displayAlert } from '../shared';
 
 export default class Search {
   constructor(query) {
@@ -15,17 +15,20 @@ export default class Search {
      *    "value":"XMLHTTPREQUEST"
      * }]
      */
-    
 
     try {
       // promise handling with await
+      const options = {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      };
       const res = await axios(
-        `${proxy}http://food2fork.com/api/search?key=${key}&q=${this.query}`
+        `${proxy}http://food2fork.com/api/search?key=${key}&q=${this.query}`,
+        options
       );
 
       this.result = res.data.recipes;
     } catch (error) {
-      displayAlert('search error : ' + error)
+      displayAlert('search error : ' + error);
     }
   }
 }
