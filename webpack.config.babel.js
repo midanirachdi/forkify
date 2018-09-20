@@ -4,7 +4,6 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import Dotenv from 'dotenv-webpack';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 module.exports = {
@@ -83,7 +82,6 @@ module.exports = {
       filename: 'css/style.[contenthash].css'
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new Dotenv(),
     new WebpackMd5Hash()
   ],
   devServer: {
@@ -92,7 +90,7 @@ module.exports = {
       warnings: true,
       errors: true
     }
-  },
+  }
   // performance: {
   //   hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   // }

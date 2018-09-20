@@ -48,6 +48,7 @@
     ]
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "browserify-fs": "^1.0.0"
   }
 }
