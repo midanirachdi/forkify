@@ -65,10 +65,6 @@ npm run build:prod
 
 Output is written to the `dist/` folder.
 
-## 📸 Screenshot
-
-![forkify_part1](https://i.imgur.com/hDWmJeI.png)
-
 ## 📜 Available Scripts
 
 | Command | Description |
